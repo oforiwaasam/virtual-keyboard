@@ -44,7 +44,11 @@ const keyboard = {
         };
 
         keyLayout.forEach(key => {
-            const keyElement
+            const keyElement = document.createElement("button");
+            const insertLineBreak = ["backspace", "p", "enter", "?"].indexOf(key) !== -1;
+
+            // Add attributes/classes
+            keyElement.setAttribute("type", "button")
         })
     },
 
