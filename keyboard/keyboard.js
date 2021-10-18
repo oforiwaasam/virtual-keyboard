@@ -41,7 +41,11 @@ const keyboard = {
         // create HTML for an icon
         const createIconHTML  = (icon_name) => {
             return '<i class="material-icons">$(icon_name)</i>';
-        }
+        };
+
+        keyLayout.forEach(key => {
+            const keyElement
+        })
     },
 
     _triggerEvent(handlerName) {
