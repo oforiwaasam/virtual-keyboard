@@ -48,7 +48,20 @@ const keyboard = {
             const insertLineBreak = ["backspace", "p", "enter", "?"].indexOf(key) !== -1;
 
             // Add attributes/classes
-            keyElement.setAttribute("type", "button")
+            keyElement.setAttribute("type", "button");
+            keyElement.classList.add("keyboard__key");
+
+            switch(key) {
+                case "backspace":
+                    keyElement.classList.add("keyboard__key--wide");
+                    keyElement.innerHTML = createIconHTML("backspace");
+
+                    keyElement.addEventListener("click", () => {
+                        this.properties.value = this.properties.value.substring(0, this.properties.value.length - 1);
+                        this._triggerEvent("oninput");
+                    });
+                    break;
+            }
         })
     },
 
