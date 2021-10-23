@@ -92,13 +92,13 @@ const keyboard = {
                     });
                     break;
 
-                case "enter":
-                    keyElement.classList.add("keyboard__key--wide");
-                    keyElement.innerHTML = createIconHTML("keyboard_return");
+                case "done":
+                    keyElement.classList.add("keyboard__key--wide", "keyboard__key--dark");
+                    keyElement.innerHTML = createIconHTML("check_circle");
 
                     keyElement.addEventListener("click", () => {
-                        this.properties.value += "\n";
-                        this._triggerEvent("oninput");
+                        this.close();
+                        this._triggerEvent("onclose");
                     });
                     break;
     
