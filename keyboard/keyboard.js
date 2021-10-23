@@ -23,6 +23,7 @@ const keyboard = {
         // Setup main elements
         this.elements.main.classList.add("keyboard", "1keyboard--hidden");
         this.elements.keysContainer.classList.add("keyboard__keys");
+        this.elements.keysContainer.appendChild(this._createKeys());
 
         // Add to DOM
         this.elements.main.appendChild(this.elements.keysContainer);
@@ -112,7 +113,16 @@ const keyboard = {
                     break;    
     
             }
-        })
+            
+            fragment.appendChild(keyElement);
+
+            if (insertLineBreak) {
+                fragment.appendChild(document.createElement("br"));
+            }
+
+        });
+
+        return fragment;
     },
 
     _triggerEvent(handlerName) {
