@@ -71,6 +71,37 @@ const keyboard = {
                         keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
                     });
                     break;
+
+                case "enter":
+                    keyElement.classList.add("keyboard__key--wide");
+                    keyElement.innerHTML = createIconHTML("keyboard_return");
+
+                    keyElement.addEventListener("click", () => {
+                        this.properties.value += "\n";
+                        this._triggerEvent("oninput");
+                    });
+                    break;
+
+                case "space":
+                    keyElement.classList.add("keyboard__key--extra-wide");
+                    keyElement.innerHTML = createIconHTML("space_bar");
+
+                    keyElement.addEventListener("click", () => {
+                        this.properties.value += " ";
+                        this._triggerEvent("oninput");
+                    });
+                    break;
+
+                case "enter":
+                    keyElement.classList.add("keyboard__key--wide");
+                    keyElement.innerHTML = createIconHTML("keyboard_return");
+
+                    keyElement.addEventListener("click", () => {
+                        this.properties.value += "\n";
+                        this._triggerEvent("oninput");
+                    });
+                    break;
+    
             }
         })
     },
