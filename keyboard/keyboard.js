@@ -2,7 +2,7 @@ const keyboard = {
     elements: {
         main: null,
         keysContainer: null,
-        keys = []
+        keys: []
     },
 
     eventHandlers: {
